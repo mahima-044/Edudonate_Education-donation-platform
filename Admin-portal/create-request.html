@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Donation Request</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles for Create Request */
+        .request-form-container {
+            width: 700px;
+            background-color: #fff;
+            padding: 30px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 30px auto;
+        }
+
+        .back-to-dashboard {
+            display: block;
+            margin-bottom: 20px;
+            color: #6c757d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .request-form-container header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .request-form-container header p {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        /* Reusing form styles */
+        .form-row-request {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group-third {
+            flex: 1;
+        }
+
+        .form-group-half {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input[type="file"] {
+            padding: 10px 12px;
+        }
+
+        .submit-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .submit-request-btn,
+        .cancel-btn {
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .submit-request-btn {
+            background-color: #212529;
+            color: white;
+            border: none;
+        }
+
+        .cancel-btn {
+            background-color: white;
+            color: #6c757d;
+            border: 1px solid #ced4da;
+            text-decoration: none;
+            line-height: 1.2;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="dashboard.html" class="back-to-dashboard">← Back to Dashboard</a>
+    <div class="request-form-container">
+        <header>
+            <h1>Create Donation Request</h1>
+            <p>Fill in the details for your donation request</p>
+        </header>
+
+        <form action="/admin/submit-request" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Request Title *</label>
+                <input type="text" id="title" name="title" placeholder="e.g. Books for 100 Students" required>
+            </div>
+
+            <div class="form-row-request">
+                <div class="form-group form-group-half">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select category</option>
+                        <option value="Education">Education</option>
+                        <option value="Health">Digital Tools</option>
+                        <option value="Health">Digital Tools</option>
+                        <option value="Infrastructure">Infrastructure</option>
+                    </select>
+                </div>
+                <div class="form-group form-group-half">
+                    <label for="amount">Required Amount *</label>
+                    <input type="number" id="amount" name="amount" placeholder="e.g. ₹2000" required>
+                </div>
+            </div>
+
+            <div class="form-group form-group-third">
+                <label for="beneficiaries">Number of Beneficiaries</label>
+                <input type="number" id="beneficiaries" name="beneficiaries" placeholder="e.g. 10 Students">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Detailed Description *</label>
+                <textarea id="description" name="description"
+                    placeholder="Explain why this donation is needed and how it will be used..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="images">Supporting Images</label>
+                <input type="file" id="images" name="images" multiple accept="image/*">
+                <small class="form-text text-muted">Upload images showing the need (classroom, students, etc.)</small>
+            </div>
+
+            <div class="form-group">
+                <label for="documents">Supporting Documents</label>
+                <input type="file" id="documents" name="documents" multiple accept=".pdf, .doc, .docx">
+                <small class="form-text text-muted">Upload any relevant documents (PDF, DOC)</small>
+            </div>
+
+            <div class="submit-actions">
+                <a href="dashboard.html" class="cancel-btn">Cancel</a>
+                <button type="submit" class="submit-request-btn">Submit Request</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

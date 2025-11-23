@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Profile</title>
+    <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Page-specific styles for Profile */
+        .profile-container {
+            width: 700px;
+            background-color: #fff;
+            padding: 30px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 30px auto;
+        }
+
+        .back-to-dashboard {
+            display: block;
+            margin-bottom: 20px;
+            color: #6c757d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .profile-section h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .profile-section p {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .form-row-profile {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group-half-profile {
+            flex: 1;
+        }
+        
+        /* Reusing common form styles from registration/login */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .update-btn {
+            background-color: #212529;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .uploaded-docs {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .doc-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doc-info i {
+            font-size: 24px;
+            color: #6c757d;
+        }
+
+        .doc-info span {
+            font-weight: 500;
+        }
+
+        .doc-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .upload-additional {
+            margin-top: 20px;
+        }
+
+        .upload-additional input[type="file"] {
+            padding: 10px 12px;
+            margin-top: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="dashboard.html" class="back-to-dashboard">← Back to Dashboard</a>
+    <div class="profile-container">
+        <div class="profile-section">
+            <h2>Organization Profile</h2>
+            <p>Manage your organization's information and documents</p>
+            
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="orgName">Organization Name</label>
+                    <input type="text" id="orgName" name="orgName" value="Sample NGO Organization">
+                </div>
+
+                <div class="form-row-profile">
+                    <div class="form-group form-group-half-profile">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" value="contact@samplengo.com">
+                    </div>
+                    <div class="form-group form-group-half-profile">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+1234567890">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address">123 Education Street, City, State</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="regNumber">Registration Number</label>
+                    <input type="text" id="regNumber" name="regNumber" value="NGO12345">
+                </div>
+
+                <button type="submit" class="update-btn">Update Profile</button>
+            </form>
+        </div>
+
+        <div class="uploaded-docs">
+            <h2>Uploaded Documents</h2>
+            <p>Your verification documents</p>
+
+            <div class="doc-item">
+                <div class="doc-info">
+                    <i class="fa-solid fa-file-alt"></i>
+                    <div>
+                        <span>Registration Certificate</span>
+                        <small class="text-muted">Uploaded on Jan 15, 2025</small>
+                    </div>
+                </div>
+                <a href="#">View</a>
+            </div>
+
+            <div class="upload-additional">
+                <h3>Upload Additional Document</h3>
+                <input type="file" id="additionalDoc" name="additionalDoc">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

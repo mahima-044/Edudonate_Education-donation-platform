@@ -1,0 +1,246 @@
+/* General login page styles */
+/* body.login-body {
+    background-color: #eef2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.login-card {
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .login-card {
+        flex-direction: row;
+    }
+}
+
+.login-image {
+    width: 100%;
+    height: 250px;
+    display: none; /* Hidden on mobile 
+}
+
+@media (min-width: 768px) {
+    .login-image {
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-form-container {
+    padding: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .login-form-container {
+        width: 50%;
+    }
+}
+
+.logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4f46e5;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-link i {
+    margin-right: 0.5rem;
+    color: #6366f1;
+}
+
+#form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    background-color: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+}
+
+.form-switcher {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.form-switcher a {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-switcher a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+.message {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    display: none;
+}
+
+.message.success {
+    background-color: #dcfce7;
+    color: #16a34a;
+} */
+
+/* --- Login/Sign Up Page Styles --- */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust height to fill the screen nicely */
+    padding: 50px 20px;
+    background-color: #f4f7f6; /* Light background for the page */
+}
+
+.auth-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Standard size for a login form */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.auth-box h2 {
+    margin-bottom: 25px;
+    color: #007bff; /* Primary color */
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important for padding and width calculation */
+    font-size: 1rem;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* A vibrant green for action */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: #218838;
+}
+
+.auth-box p {
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.auth-box a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
+
+/* Hide one box when the other is shown (Handled by JS, but good to have CSS structure) */
+/* The "style="display: none;" on .signup-box in HTML handles the initial state */

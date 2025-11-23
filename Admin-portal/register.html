@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register NGO / School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles for Registration */
+        .register-box {
+            width: 600px;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 50px auto;
+        }
+
+        .register-box header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-box header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .register-box header p {
+            color: #6c757d;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group-half {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 10px 12px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #212529;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .register-box footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6c757d;
+        }
+
+        .register-box footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-center-content">
+        <div class="register-box">
+            <header>
+                <h1>Register NGO / School</h1>
+                <p>Submit your organization details for verification</p>
+            </header>
+            <form action="/admin/register" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="orgName">Organization Name *</label>
+                    <input type="text" id="orgName" name="orgName" placeholder="Enter organization name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group form-group-half">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="contact@example.com" required>
+                    </div>
+                    <div class="form-group form-group-half">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1234567890" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <textarea id="address" name="address" placeholder="Enter complete address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="regNumber">Registration Number *</label>
+                    <input type="text" id="regNumber" name="regNumber" placeholder="NGO/School Registration Number"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regCertificate">Registration Certificate *</label>
+                    <input type="file" id="regCertificate" name="regCertificate" accept=".pdf, .jpg, .jpeg, .png"
+                        required>
+                    <small class="form-text text-muted">Upload NGO registration or school certificate (PDF, JPG,
+                        PNG)</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group form-group-half">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Create password" required>
+                    </div>
+                    <div class="form-group form-group-half">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+            <footer>
+                Already registered? <a href="school-login.html">Login here</a>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

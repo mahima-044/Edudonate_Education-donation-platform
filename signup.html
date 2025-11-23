@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduDonate - Login / Sign Up</title>
+    <link rel="stylesheet" href="sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="auth-container">
+        <div class="auth-box login-box">
+            <h2>Login to your account</h2>
+            <form id="loginForm" action="/login" method="POST">
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </div>
+
+        <div class="auth-box signup-box" style="display: none;">
+            <h2>Create an account</h2>
+            <form id="signupForm" action="/signup" method="POST">
+                <div class="input-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 EduDonate. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const showSignup = document.getElementById('showSignup');
+            const showLogin = document.getElementById('showLogin');
+            const loginBox = document.querySelector('.login-box');
+            const signupBox = document.querySelector('.signup-box');
+
+            // Function to switch to the Sign Up view
+            showSignup.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginBox.style.display = 'none';
+                signupBox.style.display = 'block';
+            });
+
+            // Function to switch to the Login view
+            showLogin.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupBox.style.display = 'none';
+                loginBox.style.display = 'block';
+            });
+
+            // ** LOG IN Functionality ** - Removed to allow server-side submission
+
+            // ** SIGN UP Functionality ** - Removed to allow server-side submission
+        });
+    </script>
+    <!-- <script src="sign-up.js"></script> -->
+</body>
+
+</html>

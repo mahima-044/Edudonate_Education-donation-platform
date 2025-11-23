@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Donations | EduDonate</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .admin-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                EduDonate
+            </a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../programs.html">Programs</a></li>
+                    <li><a href="../donate.html">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <a href="../donate.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Donate</a>
+        <h2>Admin Dashboard - Donations</h2>
+        <p>View all recorded donations below.</p>
+
+        <% if (donations.length> 0) { %>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Impact Type</th>
+                        <th>Amount Type</th>
+                        <th>Amount (₹)</th>
+                        <th>Custom Amount (₹)</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% donations.forEach(donation=> { %>
+                        <tr>
+                            <td>
+                                <%= donation.id %>
+                            </td>
+                            <td>
+                                <%= donation.first_name %>
+                            </td>
+                            <td>
+                                <%= donation.last_name || '' %>
+                            </td>
+                            <td>
+                                <%= donation.email %>
+                            </td>
+                            <td>
+                                <%= donation.phone || '' %>
+                            </td>
+                            <td>
+                                <%= (donation.impact_type || 'General Support' ).replace(/-/g, ' ' ).replace(/\b\w/g,
+                                    l=> l.toUpperCase()) %>
+                            </td>
+                            <td>
+                                <%= (donation.amount_type || 'One-time' ).charAt(0).toUpperCase() +
+                                    (donation.amount_type || 'One-time' ).slice(1) %>
+                            </td>
+                            <td>
+                                <%= Math.floor(donation.amount) %>
+                            </td>
+                            <td>
+                                <%= donation.custom_amount> 0 ? Math.floor(donation.custom_amount) : '-' %>
+                            </td>
+                            <td>
+                                <%= donation.created_at %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <div class="no-data">
+                    <i class="fas fa-inbox" style="font-size: 48px; color: #ddd; margin-bottom: 10px;"></i>
+                    <p>No donations recorded yet.</p>
+                </div>
+                <% } %>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="../index.html" class="logo footer-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    EduDonate
+                </a>
+                <p>Empowering children through education and technology. Every donation creates a brighter future.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../programs.html">Our Programs</a></li>
+                    <li><a href="#">Impact Stories</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="../programs.html#adopt-student">Adopt a Student</a></li>
+                    <li><a href="../programs.html#sponsor-village">Sponsor a Village</a></li>
+                    <li><a href="../programs.html#digital-tools">Digital Learning Tools</a></li>
+                    <li><a href="../donate.html">General Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Education Street, Learning City</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> hello@edudonate.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 EduDonate. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

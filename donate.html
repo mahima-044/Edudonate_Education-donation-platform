@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - EduDonate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                EduDonate
+            </a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <!-- <li><a href="#">Impact</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                    <li><a href="#">Contact</a></li> -->
+                </ul>
+            </nav>
+            <a href="donate.html" class="btn btn-primary donate-now-btn">Donate Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="donation-page-sections">
+            <div class="container donation-grid">
+                <div class="donation-form-container">
+                    <div class="section-header">
+                        <h2>Make a Difference Today</h2>
+                        <p>Your donation creates immediate impact and lasting change. Choose how you want to help.</p>
+                    </div>
+
+                    <form class="donation-form" action="/donate" method="POST">
+                        <div class="form-section">
+                            <h3>Choose Your Impact</h3>
+                            <div class="impact-options-grid">
+                                <label class="impact-option">
+                                    <input type="radio" name="impact" value="adopt-student" checked>
+                                    <div class="impact-content">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <h4>Adopt a Student</h4>
+                                        <p>Sponsor a child's complete education journey.</p>
+                                        <a href="#" class="details-link">Direct support for 1 student's full
+                                            education</a>
+                                    </div>
+                                </label>
+                                <label class="impact-option">
+                                    <input type="radio" name="impact" value="sponsor-village">
+                                    <div class="impact-content">
+                                        <i class="fa-solid fa-house"></i>
+                                        <h4>Sponsor a Village</h4>
+                                        <p>Transform an entire community's educational infrastructure.</p>
+                                        <a href="#" class="details-link">Support for 200+ students and community
+                                            development</a>
+                                    </div>
+                                </label>
+                                <label class="impact-option">
+                                    <input type="radio" name="impact" value="digital-tools">
+                                    <div class="impact-content">
+                                        <i class="fa-solid fa-laptop-code"></i>
+                                        <h4>Digital Learning Tools</h4>
+                                        <p>Provide tablets, smart boards, and AI learning platforms</p>
+                                        <a href="#" class="details-link">Educational technology for 10-15 students</a>
+                                    </div>
+                                </label>
+                                <label class="impact-option">
+                                    <input type="radio" name="impact" value="general-support">
+                                    <div class="impact-content">
+                                        <i class="fa-solid fa-seedling"></i>
+                                        <h4>General Support</h4>
+                                        <p>Flexible funding for our most urgent needs</p>
+                                        <a href="#" class="details-link">Support multiple programs where needed most</a>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Select Amount</h3>
+                            <div class="amount-type-tabs">
+                                <label class="amount-tab-label">
+                                    <input type="radio" name="amount-type" value="monthly" checked>
+                                    <span class="tab-btn">Monthly</span>
+                                </label>
+                                <label class="amount-tab-label">
+                                    <input type="radio" name="amount-type" value="one-time">
+                                    <span class="tab-btn">One-time</span>
+                                </label>
+                            </div>
+                            <div class="amount-options">
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="2000" checked>
+                                    <span>₹2000</span>
+                                </label>
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="4000">
+                                    <span>₹4000</span>
+                                </label>
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="5000">
+                                    <span>₹5000</span>
+                                </label>
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="8000">
+                                    <span>₹8000</span>
+                                </label>
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="10000">
+                                    <span>₹10k</span>
+                                </label>
+                                <label class="amount-btn">
+                                    <input type="radio" name="donation-amount" value="20000">
+                                    <span>₹20k</span>
+                                </label>
+                            </div>
+                            <div class="custom-amount">
+                                <label for="custom-amount-input">Custom Amount</label>
+                                <input type="number" id="custom-amount-input" name="custom-amount"
+                                    placeholder="Enter amount">
+                            </div>
+                            <input type="hidden" name="final-amount" id="final-amount" value="0">
+                            <p class="donation-impact-text">Your <b>₹2000</b> per month will direct support for 1
+                                student's full education</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Complete Your Donation</h3>
+                            <div class="donation-form-fields">
+                                <div class="donation-info-left">
+                                    <h4>Personal Information</h4>
+                                    <input type="text" placeholder="First Name" name="first-name" required>
+                                    <input type="text" placeholder="Last Name" name="last-name">
+                                    <input type="email" placeholder="Email Address" name="email" required>
+                                    <input type="tel" placeholder="Phone Number (Optional)" name="phone">
+                                </div>
+                                <div class="donation-info-right">
+                                    <h4>Payment Information</h4>
+                                    <input type="text" placeholder="Card Number" name="card-number">
+                                    <div class="card-details">
+                                        <input type="text" placeholder="MM/YY" name="expiry-date">
+                                        <input type="text" placeholder="CVC" name="cvc">
+                                    </div>
+                                    <input type="text" placeholder="Cardholder Name" name="cardholder-name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="donation-summary-box">
+                            <div class="donation-summary">
+                                <span>Donation Summary</span>
+                                <h4>₹2000/-</h4>
+                            </div>
+                            <p class="summary-details">Adopt a Student • Monthly Donation</p>
+                            <button type="submit" class="btn btn-primary complete-donation-btn">Complete Donation <i
+                                    class="fa-regular fa-heart"></i></button>
+                            <p class="terms-text">By donating, you agree to our <a href="#">Terms of Service</a> and <a
+                                    href="#">Privacy Policy</a>. Your donation is secure and you will receive a receipt
+                                via email.</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="donation-sidebar">
+                    <div class="sidebar-box">
+                        <h4>Campaign Progress</h4>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <p class="progress-text">₹2,100 raised<span class="goal-text">₹2,500 goal</span></p>
+                        <p class="progress-details">84% complete • Help us reach our goal!</p>
+                    </div>
+                    <div class="sidebar-box">
+                        <h4>Secure & Trusted</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-lock"></i> 256-bit SSL Encryption</li>
+                            <li><i class="fa-solid fa-certificate"></i> Charity Navigator 4 Stars</li>
+                            <li><i class="fa-solid fa-registered"></i> Registered 501(c)(3)</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Secure Payment Processing</li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-box recent-supporters-box">
+                        <h4>Recent Supporters</h4>
+                        <ul>
+                            <li>
+                                <span>Amit M.</span>
+                                <span>₹5k</span>
+                                <p>Adopt a Student</p>
+                            </li>
+                            <li>
+                                <span>Hemant Singh</span>
+                                <span>₹8k</span>
+                                <p>Digital Tools</p>
+                            </li>
+                            <li>
+                                <span>Minakshi Raval</span>
+                                <span>₹1k</span>
+                                <p>General Support</p>
+                            </li>
+                            <li>
+                                <span>Aman R.</span>
+                                <span>₹20k</span>
+                                <p>Sponsor a Village</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    EduDonate
+                </a>
+                <p>Empowering children through education and technology. Every donation creates a brighter future.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="#">Impact Stories</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="programs.html#adopt-student">Adopt a Student</a></li>
+                    <li><a href="programs.html#sponsor-village">Sponsor a Village</a></li>
+                    <li><a href="programs.html#digital-tools">Digital Learning Tools</a></li>
+                    <li><a href="donate.html">General Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Education Street, Learning City</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> hello@edudonate.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 EduDonate. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
